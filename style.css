@@ -37,7 +37,9 @@ a {
 }
 
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar {
     position: fixed;
@@ -83,7 +85,9 @@ nav a:hover {
 }
 
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero {
     min-height: 100vh;
@@ -142,7 +146,9 @@ nav a:hover {
 }
 
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 
 .hero-buttons,
 .contact-buttons {
@@ -180,7 +186,9 @@ nav a:hover {
 }
 
 
-/* TERMINAL */
+/* =========================
+   TERMINAL
+========================= */
 
 .terminal {
     background: #05080b;
@@ -243,7 +251,9 @@ nav a:hover {
 }
 
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 
 .section {
     padding: 120px 0;
@@ -260,7 +270,9 @@ nav a:hover {
 }
 
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
 
 .about-grid {
     display: grid;
@@ -313,7 +325,9 @@ nav a:hover {
 }
 
 
-/* SKILLS */
+/* =========================
+   SKILLS
+========================= */
 
 .skills-grid {
     display: grid;
@@ -350,7 +364,9 @@ nav a:hover {
 }
 
 
-/* PROJECTS */
+/* =========================
+   PROJECTS
+========================= */
 
 .projects-grid {
     display: grid;
@@ -422,62 +438,96 @@ nav a:hover {
     color: var(--accent);
 }
 
-.project-card a {
+.project-links {
+    display: flex;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.project-links a {
     color: var(--accent);
 
     font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.project-links a:hover {
+    transform: translateX(3px);
 }
 
 
-/* TIMELINE */
+/* =========================
+   EXPERIÊNCIA PROFISSIONAL
+========================= */
 
-.timeline {
-    border-left: 2px solid var(--border);
-
-    padding-left: 30px;
+.experience-section {
+    text-align: center;
 }
 
-.timeline-item {
-    position: relative;
+.experience-content {
+    width: min(1000px, 90%);
 
-    max-width: 700px;
+    margin: 0 auto;
 }
 
-.timeline-item::before {
-    content: "";
-
-    position: absolute;
-
-    width: 10px;
-    height: 10px;
-
-    border-radius: 50%;
-
-    background: var(--accent);
-
-    left: -36px;
-
-    top: 8px;
+.experience-section .section-label {
+    text-align: center;
 }
 
-.timeline-date {
-    color: var(--accent);
+.experience-section .section-title {
+    text-align: center;
 
-    font-family: monospace;
+    margin-bottom: 45px;
 }
 
-.timeline-item h3 {
-    font-size: 1.5rem;
+/* Caixa do resumo profissional */
 
-    margin: 10px 0;
+.experience-text {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 40px 50px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    text-align: justify;
+
+    text-justify: inter-word;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.20);
 }
 
-.timeline-item p {
+/* Parágrafos */
+
+.experience-text p {
     color: var(--muted);
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 22px;
+}
+
+.experience-text p:last-child {
+    margin-bottom: 0;
 }
 
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 
 .contact-section {
     text-align: center;
@@ -485,6 +535,8 @@ nav a:hover {
 
 .contact-content {
     max-width: 750px;
+
+    margin: 0 auto;
 }
 
 .contact-content .section-label {
@@ -500,7 +552,9 @@ nav a:hover {
 }
 
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     border-top: 1px solid var(--border);
@@ -523,7 +577,9 @@ footer p {
 }
 
 
-/* RESPONSIVO */
+/* =========================
+   RESPONSIVO
+========================= */
 
 @media (max-width: 800px) {
 
@@ -551,7 +607,15 @@ footer p {
         grid-template-columns: 1fr;
     }
 
+    .experience-content {
+        width: 90%;
+    }
+
+    .experience-text {
+        padding: 30px;
+    }
 }
+
 
 @media (max-width: 500px) {
 
@@ -576,22 +640,19 @@ footer p {
         flex-direction: column;
     }
 
-}
+    .experience-content {
+        width: 95%;
+    }
 
-/* =========================
-   ANIMAÇÕES
-========================= */
+    .experience-text {
+        padding: 25px 20px;
 
-.section {
-    opacity: 0;
-    transform: translateY(30px);
+        font-size: 0.95rem;
+    }
 
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
-}
+    .experience-text p {
+        font-size: 0.95rem;
 
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
+        line-height: 1.7;
+    }
 }
